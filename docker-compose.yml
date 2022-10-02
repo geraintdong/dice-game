@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  # The Application
+  app:
+    build:
+      context: .
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: "bridge"
